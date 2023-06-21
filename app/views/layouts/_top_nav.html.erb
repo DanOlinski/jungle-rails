@@ -70,6 +70,15 @@
           <%= link_to 'About Us', :about, class: "nav-link" %>
         </li>
 
+
+        <li class="nav-link" >
+              Welcome <%= 'current_user.first_name' %> | <%= link_to "Logout", '/logout', class: "nav-link" %>
+
+              <%= link_to "Login", '/login', class: "nav-link" %>  
+              <%= link_to "Register", '/register', class: "nav-link" %>
+        </li>
+
+
       </ul>
     </div>
   </div>

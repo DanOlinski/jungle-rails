@@ -4,6 +4,14 @@ Rails.application.routes.draw do
 
   get '/about', to: 'about#index'
 
+  #this rout renderes a page with a form for a user registration
+  get '/register', to: 'users#new'
+  #this rout saves the users informatiopn to the database
+  post '/register', to: 'users#create'
+  
+  get '/login', to: 'session#new'
+  post '/login', to: 'session#create'
+
   resources :products, only: [:index, :show]
   resources :categories, only: [:show]
   
