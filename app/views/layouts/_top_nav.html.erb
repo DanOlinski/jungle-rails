@@ -72,10 +72,12 @@
 
 
         <li class="nav-link" >
-              Welcome <%= 'current_user.first_name' %> | <%= link_to "Logout", '/logout', class: "nav-link" %>
-
+          <% if session[:user] %>
+              Welcome <%= session[:user]["first_name"] %> <%= link_to "Logout", '/logout', class: "nav-link" %>
+          <% else %>
               <%= link_to "Login", '/login', class: "nav-link" %>  
               <%= link_to "Register", '/register', class: "nav-link" %>
+          <% end %>
         </li>
 
 
