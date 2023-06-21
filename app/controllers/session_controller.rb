@@ -16,6 +16,7 @@ class SessionController < ApplicationController
     end
   end
 
+  #set user object to nill and redirect user to login page. When the logout button is clicked
   def destroy
     session[:user] = nil
     redirect_to '/login'
