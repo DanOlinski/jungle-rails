@@ -9,8 +9,12 @@ Rails.application.routes.draw do
   #this rout saves the users informatiopn to the database
   post '/register', to: 'users#create'
   
+  #render login form
   get '/login', to: 'session#new'
+  #save user info to database and ser a variable to hold the user information
   post '/login', to: 'session#create'
+  #logout user
+  get '/logout', to: 'session#destroy'
 
   resources :products, only: [:index, :show]
   resources :categories, only: [:show]
